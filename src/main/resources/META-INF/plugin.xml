@@ -1,0 +1,24 @@
+<idea-plugin>
+    <id>com.yourcompany.vuehighlighter</id>
+    <name>Vue Template Highlighter</name>
+    <vendor>Your Company</vendor>
+    <description>Highlights template tags in Vue files for better reading</description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>org.jetbrains.plugins.vue</depends>
+    
+    <extensions defaultExtensionNs="com.intellij">
+        <annotator
+                language="Vue"
+                implementationClass="org.example.templatehighlighter.VueTemplateHighlighter"/>
+
+        <!-- Register custom color scheme -->
+        <additionalTextAttributes
+                scheme="Default"
+                file="colorSchemes/VueTemplateHighlighterDefault.xml"/>
+        <additionalTextAttributes
+                scheme="Dracula"
+                file="colorSchemes/VueTemplateHighlighterDracula.xml"/>
+    </extensions>
+</idea-plugin>
